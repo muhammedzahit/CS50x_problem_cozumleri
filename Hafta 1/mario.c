@@ -10,7 +10,7 @@ void yildizYaz(int a){
 }
 
 void makePyramid(int a){
-    if (a < 1 || a > 8)
+    while (a < 1 || a > 8)
         a = get_int("lutfen 0-8 arasinda bir sayi girin\n");
     int yildiz = 1;
     for (int i=1; i<=a; i++ , yildiz++){
