@@ -4,8 +4,8 @@
 #include <crypt.h>
 
 char harfDondur(int key){
-	if (key == 0) return 'a';
-	else key--;
+    if (key == 0) return 'a';
+    else key--;
     if (key < 26) return 'a' + key;
     return 'A' + (key % 26);
 }
@@ -24,14 +24,14 @@ int basamak (int sayi){
 void kontrol(int sayi,char sifre[],int size){
     int k = 1;
 	
-	for (int i=0; i<size-1 ; i++)
-		k *= 53;
+    for (int i=0; i<size-1 ; i++)
+    k *= 53;
 		
-	for (int i=0; i<size; i++)
-	{
-		sifre[i] =  harfDondur((sayi/k) % 53);
-		k /= 53;
-	}
+    for (int i=0; i<size; i++)
+    {
+	sifre[i] =  harfDondur((sayi/k) % 53);
+	k /= 53;
+    }
 }
 
 bool hashKontrol(string a,string b)
@@ -54,15 +54,15 @@ int main(int argc, string argv[])
         char salt[3];
         salt[0] = argv[1][0];
         salt[1] = argv[1][1];
-		salt[2] = '\0';
+	salt[2] = '\0';
         //printf("%s",crypt("LAF",salt));
         int passwordNum = 0;
         for (int i=1; i<(53*53*53*53*53) ; i++)
-		{
+	{
             int size = basamak(i);
-			char sifre[size+1];
-			sifre[size] = '\0';
-			kontrol(i,sifre,size);
+	    char sifre[size+1];	
+	    sifre[size] = '\0';
+	    kontrol(i,sifre,size);
             string hash2 = crypt(sifre,salt);
             if (hashKontrol(argv[1],hash2))
             {
@@ -72,8 +72,8 @@ int main(int argc, string argv[])
             }
         }
         int size = basamak(passwordNum);
-		char password[size+1];
-		password[size] = '\0';
+	char password[size+1];
+	password[size] = '\0';
         kontrol(passwordNum,password,size);
         printf("%s\n",password);
     }
