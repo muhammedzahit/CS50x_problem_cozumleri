@@ -135,7 +135,7 @@ int main(int argc, char *argv[])
         for (int j  = 0; j < width; j++)
         {
             
-			// büyütmemize oranla her kare parçası n! kere büyür.
+			// büyütmemize oranla her kare parçası karesi kadar büyür.
             for (int k = 0; k < n ; k++)
             {
                 for (int l=0; l<n; l++)
