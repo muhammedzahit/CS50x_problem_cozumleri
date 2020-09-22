@@ -90,19 +90,6 @@ int main(int argc, char *argv[])
 	
 	
     RGBTRIPLE triples[height][width];
-    
-
-    for (int i = 0 ; i < height ; i++)
-    {
-        
-        for (int j  = 0; j < width; j++)
-        {
-            triples[i][j].rgbtBlue = 0;
-            triples[i][j].rgbtRed = 0;
-            triples[i][j].rgbtGreen = 0;
-        }
-
-    }
 
    
     for (int i = 0 ; i< height ; i++)
