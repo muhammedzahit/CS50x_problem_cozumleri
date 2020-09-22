@@ -107,17 +107,6 @@ int main(int argc, char *argv[])
 
 		for (int j = 0; j < width; j++)
 		{
-			triples[i][j].rgbtBlue = 0;
-			triples[i][j].rgbtRed = 0;
-			triples[i][j].rgbtGreen = 0;
-		}
-	}
-
-	for (int i = 0; i < height; i++)
-	{
-
-		for (int j = 0; j < width; j++)
-		{
 
 			RGBTRIPLE triple;
 
@@ -144,7 +133,7 @@ int main(int argc, char *argv[])
 			for (int j = 0; j < width; j++)
 			{
 
-				// büyütmemize oranla her kare parçası n! kere büyür.
+				// büyütmemize oranla her kare parçası n-kare büyür.
 				for (int k = 0; k < n; k++)
 				{
 					for (int l = 0; l < n; l++)
