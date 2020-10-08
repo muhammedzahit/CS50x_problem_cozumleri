@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block main %}
+<table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Shares</th>
+                <th>Price</th>
+                <th>Total</th>
+                <th>Type</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        {% for item in infos %}
+        <tbody>
+            <tr>
+                <th>{{item["symbol"]}}</th>
+                <th>{{item["shares"]}}</th>
+                <th>{{item["price"]}}</th>
+                <th>{{item["price"]*item["shares"]}}</th>
+                <th>{{item["type"]}}</th>
+                <th>{{item["date"]}}</th>
+            </tr>
+        </tbody>
+        {% endfor %}
+</table>
+{% endblock %}
